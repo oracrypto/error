@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap" rel="stylesheet">
     <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -30,204 +29,178 @@
 
     document.addEventListener('copy', function(e) {
         e.preventDefault();
-        alert('');
+        alert('عذراً، النسخ غير مسموح!');
     });
     </script>
 
     <title>Crypto App Login</title>
     <style>
-        
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --top-position: 5px;
+            --left-position: 1px;
+            --logo-size: 290px;
+            --font-size-app-name: 21px;
+            --font-size-app-version: 14px;
+            --input-width: 322px;
+            --button-width: 367px;
+            --element-spacing: 10px;
         }
+
         body {
             font-family: "Roboto", serif;
-            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f8f9;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            justify-content: flex-start;
-            padding: 0 20px;
-          
-        }
- /* تصميم صفحة التحميل */
-#loading-screen {
-    position: fixed; /* يجعلها منفصلة عن body */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* تأكد أنها تغطي كل شيء */
-}
-
-/* دائرة التحميل */
-.loader {
-    width: 15px;
-    height: 15px;
-    border: 5px solid #000;
-    border-top: 5px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-/* دوران الدائرة */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* الصفحة الرئيسية بدون تأثير */
-#main-content {
-    text-align: center;
-    padding: 20px;
-}
-    
-        .container {
-            width: 100%;
-            max-width: 500px;
-            margin-top: 5px;
+            height: 100vh;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
 
-        .crypto-box {
-            background-color: white;
-            border-radius: 19px;
-            padding: 13px;
-            margin-bottom: 7px;
+        .login-container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-64%);
+            padding: 0;
+        }
+
+        .app-info {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            width: 100%;
-            height: 60px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-            transition: background-color 0.3s;
+            position: absolute;
+            top: var(--top-position);
+            left: var(--left-position);
         }
 
-        .crypto-box:hover {
-            background-color: #f7f7f7;
-        }
-
-        .crypto-box img {
-            width: 35px;
-            height: 35px;
-            margin-right: 15px;
-        }
-
-        .crypto-box .cu1rrency-name {
-            font-size: 18px;
+        .app-name {
+            font-size: var(--font-size-app-name);
             font-weight: bold;
-            color: black;
-            margin-right: 5px;
+            color: #000;
         }
 
-        .crypto-box .cu1rrency-symbol {
+        .app-version {
+            font-size: var(--font-size-app-version);
+            font-weight: ;
+            color: #8c8c8c;
+            margin-left: 6px;
+        }
+
+        .logo {
+            background-image: url('https://i.postimg.cc/zB9Lxsrc/lv-0-20250226142502.gif');
+            background-size: cover;
+            background-position: center;
+            width: var(--logo-size);
+            height: var(--logo-size);
+            border-radius: 50%;
+            margin: 60px auto 30px;
+        }
+
+        h2 {
+            font-size: 23px;
+            font-weight: bold;
+            color: #000;
+            margin: 0;
+            margin-top: 0;
+            padding: 011;
+            text-align: left;
+            margin-left: 12px;
+        }
+
+        p {
             font-size: 15px;
-            color: gray;
+            color: #888;
+            margin: 0;
+            padding: 01;
+            text-align: left;
+            margin-left: 12px;
         }
 
-        .crypto-radio {
+        .input-field {
+            width: 100%;
+            max-width: var(--input-width);
+            padding: 15px;
+            margin-top: var(--element-spacing);
+            border-radius: 15px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            outline: none;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .input-field:focus {
+            border-color: #000;
+        }
+
+        button {
+            width: 100%;
+            max-width: var(--button-width);
+            padding: 15px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: var(--element-spacing);
+            transition: background-color 0.3s ease;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: var(--element-spacing);
             display: none;
         }
 
-        /* الدائرة الافتراضية */
-        .checkbox-label {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            border: 2px solid #ccc;
-            display: inline-block;
-            background-color: white;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
+        /* عرض النص في نفس السطر */
+        .buy-container {
+            display: inline-flex;
+            justify-content: center;
+            margin-top: var(--element-spacing);
         }
 
-        /* عند النقر تظهر الصورة مكان الدائرة */
-        .crypto-radio:checked + .checkbox-label {
-            background: url('https://i.postimg.cc/fT4m9KYZ/Picsart-25-03-16-01-56-49-834.jpg') no-repeat center center;
-            background-size: cover;
-            border: none;
-        }
-
-        .coming-blockchains {
-            font-size: 24px;
+        /* إعدادات اللون للنص */
+        .activation-key-text {
+            color: #888;
             font-weight: bold;
-            color: #333;
-            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        .buy-link {
+            color: #000; /* اللون الأسود للنص */
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
             margin-left: 4px;
-            text-align: left;
         }
 
-        .blockchain-box {
-            background-color: white;
-            padding: 13px;
-            margin: 10px 0;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            box-shadow: none;
-            opacity: 0.7;
-        }
-
-        .blockchain-box img {
-            width: 30px;
-            height: 30px;
-            margin-right: 15px;
-        }
-
-        .blockchain-box .cu1rrency-name {
-            font-size: 16px;
-            font-weight: bold;
+        .buy-link:hover {
             color: black;
-            margin-right: 5px;
         }
 
-        .blockchain-box .cu1rrency-symbol {
-            font-size: 15px;
-            color: gray;
+        input:focus {
+            outline: none;
         }
 
-        .continue-btn {
-            background-color: #000;
-            
-            color: white;
-            padding: 17px;
-            width: 100%;
-            border-radius: 15px;
-            border: none;
-            margin-top: 15px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .continue-btn:hover {
-            background-color: #333;
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-around;
-            background-color: white;
-            padding: 10px;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .footer-icon img {
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-        }
-
-   </style>
+    </style>
 <link rel="me" href="https://www.blogger.com/profile/07070152977029403397" />
 <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
 <meta name='google-adsense-platform-domain' content='blogspot.com'/>
@@ -282,7 +255,7 @@
               "WERTDYNBNCVB": "https://ewrdf78.blogspot.com/",
               "ETRCYTVUIOPO": "https://gvhjor.blogspot.com/",
               "WXERBYUIMOPO": "https://SERDTFYor.blogspot.com/",
-              "NMVXVBYUDVOIO": "https://oracrypto.github.io/orateam1/",
+              "NMVXVBYUDVOIO": "https://ergjs0636.blogspot.com/",
               "TRYCTGVHKBJV": "https://DRTFYrictor.blogspot.com/",
               "NO69NFDD2MU": "https://ewrdf78.blogspot.com/",
               "WXERBYUIMOPO": "https://crashpredr.blogspot.com/",
